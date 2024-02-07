@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <title>Orange Fox Game</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Orange Fox Game</h1>
+    <div class="game-board">
+        <img src="images/clouds.png" alt="clouds" class="clouds">
+        <img src="images/fox-running.gif" alt="fox" class="fox" id="fox-running">
+        <img src="images/tree.png" alt="tree" class="tree" id="tree">
+    </div>
+    <div class="game-over" id="game-over">
+        <h2>Game Over</h2>
+    </div>
+    <div class="reset" id="reset">
+        <i class="ph ph-arrow-counter-clockwise" onclick="reset()"></i>
+    </div>
+</body>
+</html>
