@@ -47,6 +47,7 @@ h1 {
     position: absolute;
     width: 550px;
     animation: clouds-animation 20s infinite linear;
+    user-select: none;
 }
 
 @keyframes clouds-animation {
@@ -64,6 +65,7 @@ h1 {
     bottom: 0;
     width: 50px;
     animation:  tree-animation 1.5s infinite linear;
+    user-select: none;
 }
 
 .fox {
@@ -71,6 +73,7 @@ h1 {
     width: 80px;
     bottom: 0;
     margin-left: 4.5rem;
+    user-select: none;
 }
 
 .jump {
@@ -79,6 +82,7 @@ h1 {
     bottom: 0;
     margin-left: 4.5rem;
     animation: jump 500ms ease-out;
+    user-select: none;
 }
 
 .game-over {
