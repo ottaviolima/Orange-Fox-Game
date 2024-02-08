@@ -115,6 +115,26 @@ h1 {
     visibility: visible;
 }
 
+.how-to-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+    margin-top: 8.5rem;
+    visibility: hidden;
+}
+
+.how-to-play-visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+    margin-top: 8.5rem;
+    visibility: visible;
+}
+
 @keyframes tree-animation {
     from {
         right: -80px;

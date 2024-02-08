@@ -26,11 +26,12 @@ function reset() {
 document.addEventListener('DOMContentLoaded', () => {
     startCounting();
 
-    document.addEventListener('keydown', jump);
+    document.addEventListener('keydown', jump)
 
     loop = setInterval(() => {
         const tree = document.getElementById('tree');
         const fox = document.getElementById('fox-running');
+        const howToPlay = document.getElementById('how-to-play');
         const gameOver = document.getElementById('game-over');
         const resetButton = document.getElementById('reset');
         const treePosition = tree.offsetLeft;
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fox.style.bottom = `${foxPosition}px`;
             gameOver.className = "game-over-visible";
             resetButton.className = "reset-visible";
+            howToPlay.className = "how-to-play-visible";
 
             clearInterval(loop);
             clearInterval(scoreInterval); // Parando a contagem do score
