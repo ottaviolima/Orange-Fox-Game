@@ -11,7 +11,7 @@ function startCounting() {
 function jump() {
     const fox = document.getElementById('fox-running');
     fox.className = "jump"
-    fox.src = 'images/fox-jumping.gif'
+    fox.src = 'images/fox-jumping.gif';
 
     setTimeout(() => {
         fox.className = "fox"
