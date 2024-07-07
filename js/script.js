@@ -20,18 +20,53 @@ function jump() {
 }
 
 function reset() {
-    location.reload();
-}
+    clearInterval(scoreInterval);
+    clearInterval(loop);
+
+    score = 0;
+    document.getElementById('score').textContent = score;
+
+    const tree = document.getElementById('tree');
+    const fox = document.getElementById('fox-running');
+    const gameOver = document.getElementById('game-over');
+    const resetButton = document.getElementById('reset');
+
+    tree.style.animation = '';
+    tree.style.left = '';
+
+    fox.style.animation = '';
+    fox.style.bottom = '0px';
+
+    gameOver.className = "game-over";
+    resetButton.className = "reset";
+
+    startCounting();
+    loop = setInterval(() => {
+        const treePosition = tree.offsetLeft;
+        const foxPosition = +window.getComputedStyle(fox).bottom.replace('px', '');
+
+        if (treePosition < 120 && treePosition > 0 && foxPosition < 80) {
+            tree.style.animation = 'none';
+            tree.style.left = `${treePosition}px`;
+            fox.style.animation = 'none';
+            fox.style.bottom = `${foxPosition}px`;
+            gameOver.className = "game-over-visible";
+            resetButton.className = "reset-visible";
+
+            clearInterval(loop);
+            clearInterval(scoreInterval); // Parando a contagem do score
+        }
+    }, 10);
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     startCounting();
 
     document.addEventListener('keydown', jump)
 
-    const loop = setInterval(() => {
+    loop = setInterval(() => {
         const tree = document.getElementById('tree');
         const fox = document.getElementById('fox-running');
-        const howToPlay = document.getElementById('how-to-play');
         const gameOver = document.getElementById('game-over');
         const resetButton = document.getElementById('reset');
         const treePosition = tree.offsetLeft;
@@ -44,10 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
             fox.style.bottom = `${foxPosition}px`;
             gameOver.className = "game-over-visible";
             resetButton.className = "reset-visible";
-            howToPlay.className = "how-to-play-visible";
 
             clearInterval(loop);
-            clearInterval(scoreInterval); // Para a contagem dos ponto
+            clearInterval(scoreInterval); // Parando a contagem do score
         }
     }, 10);
 });
@@ -57,7 +91,6 @@ function jumpClick() {
     const loop = setInterval(() => {
         const tree = document.getElementById('tree');
         const fox = document.getElementById('fox-running');
-        const howToPlay = document.getElementById('how-to-play');
         const gameOver = document.getElementById('game-over');
         const resetButton = document.getElementById('reset');
         const treePosition = tree.offsetLeft;
@@ -70,7 +103,6 @@ function jumpClick() {
             fox.style.bottom = `${foxPosition}px`;
             gameOver.className = "game-over-visible";
             resetButton.className = "reset-visible";
-            howToPlay.className = "how-to-play-visible";
 
             clearInterval(loop);
             clearInterval(scoreInterval); // Para a contagem dos ponto
