@@ -85,6 +85,36 @@ h1 {
     user-select: none;
 }
 
+.jumpClick {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem; */
+    position: absolute;
+    bottom: 3rem;
+    left: 62rem;
+}
+
+.jumpClick button {
+    padding: 10 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+    user-select: none;
+    cursor: pointer;
+    border: none;
+    color: #FFF;
+    transition: all 0.2s ease-in-out;
+    background-color: #5a95ae;
+    cursor: pointer;
+}
+
+.jumpClick button:hover {
+    transform: scale(1.1);
+}
+
 .game-over {
     display: flex;
     justify-content: center;
@@ -168,5 +198,11 @@ h1 {
     
     100% {
         bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .how-to-play, .how-to-play-visible {
+        display: none;
     }
 }
